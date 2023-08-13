@@ -94,6 +94,6 @@ func Init() (err error) {
 	return
 }
 
-func NewConfig() *GlobalConfig {
+func GetGlobalConfig() *GlobalConfig {
 	return globalConfig
 }

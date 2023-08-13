@@ -1,8 +1,8 @@
 package log
 
 import (
+	"github.com/server/userserver/userserver/config"
 	"os"
-	"usersvr/config"
 
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
