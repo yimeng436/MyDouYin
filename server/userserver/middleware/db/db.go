@@ -2,7 +2,8 @@ package db
 
 import (
 	"fmt"
-	"github.com/server/userserver/userserver/config"
+	"usersvr/config"
+
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"sync"
