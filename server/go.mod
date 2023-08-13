@@ -11,7 +11,7 @@ require (
 	gorm.io/gorm v1.25.3
 )
 
-require github.com/yimeng436/MyDouYin/pkg v0.0.3
+require github.com/yimeng436/MyDouYin/pkg v0.0.0-20230813103207-8734927f4e1c
 
 require (
 	github.com/go-sql-driver/mysql v1.7.0 // indirect
