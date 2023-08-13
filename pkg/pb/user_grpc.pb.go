@@ -19,14 +19,14 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	UserService_CheckPassword_FullMethodName = "/UserService/CheckPassword"
+	UserService_Greet_FullMethodName = "/UserService/Greet"
 )
 
 // UserServiceClient is the client API for UserService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type UserServiceClient interface {
-	CheckPassword(ctx context.Context, in *CheckPassWordRequest, opts ...grpc.CallOption) (*CheckPassWordResponse, error)
+	Greet(ctx context.Context, in *CheckPassWordRequest, opts ...grpc.CallOption) (*CheckPassWordResponse, error)
 }
 
 type userServiceClient struct {
@@ -37,9 +37,9 @@ func NewUserServiceClient(cc grpc.ClientConnInterface) UserServiceClient {
 	return &userServiceClient{cc}
 }
 
-func (c *userServiceClient) CheckPassword(ctx context.Context, in *CheckPassWordRequest, opts ...grpc.CallOption) (*CheckPassWordResponse, error) {
+func (c *userServiceClient) Greet(ctx context.Context, in *CheckPassWordRequest, opts ...grpc.CallOption) (*CheckPassWordResponse, error) {
 	out := new(CheckPassWordResponse)
-	err := c.cc.Invoke(ctx, UserService_CheckPassword_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, UserService_Greet_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -50,7 +50,7 @@ func (c *userServiceClient) CheckPassword(ctx context.Context, in *CheckPassWord
 // All implementations must embed UnimplementedUserServiceServer
 // for forward compatibility
 type UserServiceServer interface {
-	CheckPassword(context.Context, *CheckPassWordRequest) (*CheckPassWordResponse, error)
+	Greet(context.Context, *CheckPassWordRequest) (*CheckPassWordResponse, error)
 	mustEmbedUnimplementedUserServiceServer()
 }
 
@@ -58,8 +58,8 @@ type UserServiceServer interface {
 type UnimplementedUserServiceServer struct {
 }
 
-func (UnimplementedUserServiceServer) CheckPassword(context.Context, *CheckPassWordRequest) (*CheckPassWordResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CheckPassword not implemented")
+func (UnimplementedUserServiceServer) Greet(context.Context, *CheckPassWordRequest) (*CheckPassWordResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Greet not implemented")
 }
 func (UnimplementedUserServiceServer) mustEmbedUnimplementedUserServiceServer() {}
 
@@ -74,20 +74,20 @@ func RegisterUserServiceServer(s grpc.ServiceRegistrar, srv UserServiceServer) {
 	s.RegisterService(&UserService_ServiceDesc, srv)
 }
 
-func _UserService_CheckPassword_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserService_Greet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CheckPassWordRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).CheckPassword(ctx, in)
+		return srv.(UserServiceServer).Greet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: UserService_CheckPassword_FullMethodName,
+		FullMethod: UserService_Greet_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).CheckPassword(ctx, req.(*CheckPassWordRequest))
+		return srv.(UserServiceServer).Greet(ctx, req.(*CheckPassWordRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -100,8 +100,8 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*UserServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "CheckPassword",
-			Handler:    _UserService_CheckPassword_Handler,
+			MethodName: "Greet",
+			Handler:    _UserService_Greet_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
