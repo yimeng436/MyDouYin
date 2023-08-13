@@ -1,0 +1,34 @@
+svr_config:
+  name: "userserver"
+  host: "127.0.0.1"
+  port: "8002"
+  user_svr_name: "userserver"
+
+
+redis:
+  host: "127.0.0.1"
+  db: 0
+  port: 6379
+  PoolSize: 10
+
+mysql:
+  host: "127.0.0.1"
+  port: 3306
+  database: douyin
+  username: root
+  password: 123456
+
+log:
+  level: "debug"
+  file_name: "userserver.log"
+  log_path: "../log/userserver/"
+  max_size: 200
+  max_age: 30
+  max_backups: 7
+
+consul:
+  host: "127.0.0.1"
+  port: 8500
+  tags:
+    - "userserver"
+
