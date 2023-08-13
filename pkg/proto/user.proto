@@ -14,5 +14,5 @@ message CheckPassWordResponse {
 }
 
 service UserService {
-  rpc Greet(CheckPassWordRequest) returns (CheckPassWordResponse);
+  rpc CheckPassword(CheckPassWordRequest) returns (CheckPassWordResponse);
 }
