@@ -1,4 +1,4 @@
-module github.com/yimeng436/MyDouYin/pkg
+module github.com/yimeng436/MyDouYin/pkg/pb
 
 go 1.20
 
