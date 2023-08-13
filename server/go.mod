@@ -5,12 +5,13 @@ go 1.20
 require (
 	github.com/fsnotify/fsnotify v1.6.0
 	github.com/spf13/viper v1.16.0
-	github.com/yimeng436/MyDouYin/pkg v0.0.0-20230813103207-8734927f4e1c
 	go.uber.org/zap v1.21.0
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
 	gorm.io/driver/mysql v1.5.1
 	gorm.io/gorm v1.25.3
 )
+
+require github.com/yimeng436/MyDouYin/pkg v0.0.0-20230813103207-8734927f4e1c
 
 require (
 	github.com/go-sql-driver/mysql v1.7.0 // indirect
