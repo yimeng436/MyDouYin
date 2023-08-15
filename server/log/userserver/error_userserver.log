@@ -1,0 +1,1 @@
+2023-08-14T17:53:52.019+0800	[31mFATAL[0m	userserver/main.go:40	端口监听异常%!(EXTRA *net.OpError=listen tcp: lookup tcp/%!s(int=8002): getaddrinfow: The specified class was not found.)
