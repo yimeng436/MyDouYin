@@ -24,6 +24,7 @@ const (
 	UserService_GetUserInfoList_FullMethodName = "/UserService/GetUserInfoList"
 	UserService_GetUserInfo_FullMethodName     = "/UserService/GetUserInfo"
 	UserService_GetUserInfoDict_FullMethodName = "/UserService/GetUserInfoDict"
+	UserService_TestConnect_FullMethodName     = "/UserService/TestConnect"
 )
 
 // UserServiceClient is the client API for UserService service.
@@ -35,6 +36,7 @@ type UserServiceClient interface {
 	GetUserInfoList(ctx context.Context, in *GetUserInfoListRequest, opts ...grpc.CallOption) (*GetUserInfoListResponse, error)
 	GetUserInfo(ctx context.Context, in *GetUserInfoRequest, opts ...grpc.CallOption) (*GetUserInfoResponse, error)
 	GetUserInfoDict(ctx context.Context, in *GetUserInfoDictRequest, opts ...grpc.CallOption) (*GetUserInfoDictResponse, error)
+	TestConnect(ctx context.Context, in *TestRequest, opts ...grpc.CallOption) (*TestResponse, error)
 }
 
 type userServiceClient struct {
@@ -90,6 +92,15 @@ func (c *userServiceClient) GetUserInfoDict(ctx context.Context, in *GetUserInfo
 	return out, nil
 }
 
+func (c *userServiceClient) TestConnect(ctx context.Context, in *TestRequest, opts ...grpc.CallOption) (*TestResponse, error) {
+	out := new(TestResponse)
+	err := c.cc.Invoke(ctx, UserService_TestConnect_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // UserServiceServer is the server API for UserService service.
 // All implementations must embed UnimplementedUserServiceServer
 // for forward compatibility
@@ -99,6 +110,7 @@ type UserServiceServer interface {
 	GetUserInfoList(context.Context, *GetUserInfoListRequest) (*GetUserInfoListResponse, error)
 	GetUserInfo(context.Context, *GetUserInfoRequest) (*GetUserInfoResponse, error)
 	GetUserInfoDict(context.Context, *GetUserInfoDictRequest) (*GetUserInfoDictResponse, error)
+	TestConnect(context.Context, *TestRequest) (*TestResponse, error)
 	mustEmbedUnimplementedUserServiceServer()
 }
 
@@ -120,6 +132,9 @@ func (UnimplementedUserServiceServer) GetUserInfo(context.Context, *GetUserInfoR
 }
 func (UnimplementedUserServiceServer) GetUserInfoDict(context.Context, *GetUserInfoDictRequest) (*GetUserInfoDictResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserInfoDict not implemented")
+}
+func (UnimplementedUserServiceServer) TestConnect(context.Context, *TestRequest) (*TestResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method TestConnect not implemented")
 }
 func (UnimplementedUserServiceServer) mustEmbedUnimplementedUserServiceServer() {}
 
@@ -224,6 +239,24 @@ func _UserService_GetUserInfoDict_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _UserService_TestConnect_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(TestRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).TestConnect(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: UserService_TestConnect_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).TestConnect(ctx, req.(*TestRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // UserService_ServiceDesc is the grpc.ServiceDesc for UserService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -250,6 +283,10 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetUserInfoDict",
 			Handler:    _UserService_GetUserInfoDict_Handler,
+		},
+		{
+			MethodName: "TestConnect",
+			Handler:    _UserService_TestConnect_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

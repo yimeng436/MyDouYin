@@ -55,11 +55,19 @@ message GetUserInfoDictResponse{
   map<int64,UserInfo>map = 1;
 }
 
+message TestRequest{
+
+}
+message TestResponse{
+
+}
+
 service UserService {
   rpc CheckPassword(CheckPassWordRequest) returns (CheckPassWordResponse);
   rpc Register(RegisterRequest) returns (RegisterResponse);
   rpc GetUserInfoList(GetUserInfoListRequest) returns (GetUserInfoListResponse); // 获取用户列表信息
   rpc GetUserInfo(GetUserInfoRequest) returns (GetUserInfoResponse); // 获取用户信息
   rpc GetUserInfoDict(GetUserInfoDictRequest) returns (GetUserInfoDictResponse); // 获取用户信息字典
+  rpc TestConnect(TestRequest) returns (TestResponse);
 }
 
