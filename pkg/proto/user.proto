@@ -33,11 +33,12 @@ message RegisterResponse {
   int64 user_id = 1;
   string token = 2;
 }
-message GetUserInfoListRequest{
-  int64 user_id = 1;
+message GetUserInfoListRequest {
+  repeated int64 id_list = 1;
 }
-message GetUserInfoListResponse{
 
+message GetUserInfoListResponse {
+  repeated UserInfo user_info_list = 1;
 }
 
 message GetUserInfoRequest{

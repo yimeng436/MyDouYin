@@ -7,7 +7,7 @@ require (
 	github.com/gin-gonic/gin v1.9.1
 	github.com/mbobakov/grpc-consul-resolver v1.5.2
 	github.com/spf13/viper v1.16.0
-	github.com/yimeng436/MyDouYin v0.1.5
+	github.com/yimeng436/MyDouYin v0.1.6
 	go.uber.org/zap v1.24.0
 	google.golang.org/grpc v1.57.0
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1

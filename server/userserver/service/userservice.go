@@ -5,7 +5,10 @@ import (
 	"github.com/golang-jwt/jwt/v4"
 	pb "github.com/yimeng436/MyDouYin/pkg/pb"
 	"golang.org/x/crypto/bcrypt"
+	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/status"
 	"time"
+	"usersvr/log"
 	"usersvr/repository"
 )
 
@@ -66,6 +69,22 @@ func (UserService) Register(ctx context.Context, request *pb.RegisterRequest) (*
 		UserId: user.Id,
 		Token:  token,
 	}, nil
+}
+
+func (UserService) GetUserInfoList(context context.Context, request *pb.GetUserInfoListRequest) (*pb.GetUserInfoListResponse, error) {
+	info, err := repository.GetUserInfo(request.UserId)
+	if err != nil {
+		log.Fatal("repository.GetUserInfo", err)
+		return nil, err
+	}
+
+	return nil, status.Errorf(codes.Unimplemented, "method GetUserInfoList not implemented")
+}
+func (UserService) GetUserInfo(context context.Context, request *pb.GetUserInfoRequest) (*pb.GetUserInfoResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUserInfo not implemented")
+}
+func (UserService) GetUserInfoDict(context context.Context, request *pb.GetUserInfoDictRequest) (*pb.GetUserInfoDictResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUserInfoDict not implemented")
 }
 
 func GenToken(id int64, username string) (string, error) {
