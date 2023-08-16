@@ -2,6 +2,7 @@ package db
 
 import (
 	"fmt"
+	"gorm.io/gorm/logger"
 	"usersvr/config"
 
 	"gorm.io/driver/mysql"
@@ -21,7 +22,9 @@ func OpenDb() {
 	connArgs := fmt.Sprintf("%s:%s@(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local", dbConfig.Username,
 		dbConfig.Password, dbConfig.Host, dbConfig.Port, dbConfig.Database)
 	var er error
-	db, er = gorm.Open(mysql.Open(connArgs), &gorm.Config{})
+	db, er = gorm.Open(mysql.Open(connArgs), &gorm.Config{
+		Logger: logger.Default.LogMode(logger.Info),
+	})
 
 	if er != nil {
 		fmt.Println("数据库连接失败")

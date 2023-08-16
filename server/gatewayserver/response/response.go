@@ -3,6 +3,7 @@ package response
 import (
 	"gatewaysvr/log"
 	"github.com/gin-gonic/gin"
+	"net/http"
 	"reflect"
 )
 
@@ -26,7 +27,7 @@ func Success(ctx *gin.Context, msg string, v interface{}) {
 		Response(ctx, 200, response{successCode, msg})
 	} else {
 		setResponse(ctx, successCode, msg, v)
-		Response(ctx, 200, v)
+		Response(ctx, http.StatusOK, v)
 	}
 }
 

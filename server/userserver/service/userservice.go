@@ -30,7 +30,9 @@ func (UserService) CheckPassword(ctx context.Context, request *pb.CheckPassWordR
 	if err != nil {
 		return nil, err
 	}
-	err = bcrypt.CompareHashAndPassword([]byte(password), []byte(info.Password))
+
+	//必须第一个参数是数据库加密后的数据
+	err = bcrypt.CompareHashAndPassword([]byte(info.Password), []byte(password))
 	if err != nil {
 		return nil, err
 	}
@@ -43,6 +45,27 @@ func (UserService) CheckPassword(ctx context.Context, request *pb.CheckPassWordR
 		Token:  token,
 	}
 	return response, nil
+}
+
+func (UserService) Register(ctx context.Context, request *pb.RegisterRequest) (*pb.RegisterResponse, error) {
+	userName := request.Username
+	password := request.Password
+
+	user, err := repository.Register(userName, password)
+
+	if err != nil {
+		return nil, err
+	}
+
+	token, err := GenToken(user.Id, userName)
+	if err != nil {
+		return nil, err
+	}
+
+	return &pb.RegisterResponse{
+		UserId: user.Id,
+		Token:  token,
+	}, nil
 }
 
 func GenToken(id int64, username string) (string, error) {

@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"gatewaysvr/config"
 	"gatewaysvr/log"
 	"gatewaysvr/response"
 	"gatewaysvr/utils"
@@ -15,6 +16,7 @@ func Login(context *gin.Context) {
 	err := context.ShouldBind(&request)
 	if err != nil {
 		log.Fatal("请求参数错误")
+		return
 	}
 
 	client := utils.GetUserServiceClient()
@@ -25,4 +27,22 @@ func Login(context *gin.Context) {
 		return
 	}
 	response.Success(context, "success", rep)
+}
+
+func Register(context *gin.Context) {
+	var request pb.RegisterRequest
+	err := context.ShouldBind(&request)
+
+	if err != nil {
+		log.Fatal("请求参数错误")
+		return
+	}
+
+	resp, err := utils.NewUserSvrClient(config.GetGlobalConfig().UserSvrName).Register(context, &request)
+	if err != nil {
+		log.Error("register error", err)
+		response.Fail(context, err.Error(), nil)
+		return
+	}
+	response.Success(context, "success", resp)
 }

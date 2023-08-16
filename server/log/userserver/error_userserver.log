@@ -1,1 +1,7 @@
 2023-08-14T17:53:52.019+0800	[31mFATAL[0m	userserver/main.go:40	端口监听异常%!(EXTRA *net.OpError=listen tcp: lookup tcp/%!s(int=8002): getaddrinfow: The specified class was not found.)
+2023-08-16T15:54:32.433+0800	[31mERROR[0m	repository/userdao.go:18	数据库错误unsupported data type: 0xc0001e5600: Table not set, please set it like: db.Model(&user) or db.Table("users")
+2023-08-16T15:54:32.433+0800	[31mERROR[0m	repository/userdao.go:31	Registerunsupported data type: 0xc0001e5600: Table not set, please set it like: db.Model(&user) or db.Table("users")
+2023-08-16T15:56:03.150+0800	[31mERROR[0m	repository/userdao.go:18	数据库错误unsupported data type: 0xc0002fc2f0: Table not set, please set it like: db.Model(&user) or db.Table("users")
+2023-08-16T15:56:03.159+0800	[31mERROR[0m	repository/userdao.go:31	Registerunsupported data type: 0xc0002fc2f0: Table not set, please set it like: db.Model(&user) or db.Table("users")
+2023-08-16T15:58:52.938+0800	[31mERROR[0m	repository/userdao.go:18	数据库错误Error 1054 (42S22): Unknown column 'username' in 'where clause'
+2023-08-16T15:58:52.938+0800	[31mERROR[0m	repository/userdao.go:31	RegisterError 1054 (42S22): Unknown column 'username' in 'where clause'

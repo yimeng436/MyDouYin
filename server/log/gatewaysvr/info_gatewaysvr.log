@@ -23,3 +23,28 @@
 2023-08-15T21:26:07.377+0800	[34mINFO[0m	gatewayserver/main.go:31	log init success...
 2023-08-15T21:26:07.388+0800	[34mINFO[0m	utils/utils.go:43	NewSvrConn success
 2023-08-15T21:26:07.388+0800	[34mINFO[0m	gatewayserver/main.go:33	Init Grpc Server conn success
+2023-08-16T14:35:44.651+0800	[34mINFO[0m	gatewayserver/main.go:31	log init success...
+2023-08-16T14:35:44.661+0800	[34mINFO[0m	utils/utils.go:48	NewSvrConn success
+2023-08-16T14:35:44.662+0800	[34mINFO[0m	gatewayserver/main.go:33	Init Grpc Server conn success
+2023-08-16T15:41:18.072+0800	[34mINFO[0m	gatewayserver/main.go:31	log init success...
+2023-08-16T15:41:18.084+0800	[34mINFO[0m	utils/utils.go:48	NewSvrConn success
+2023-08-16T15:41:18.084+0800	[34mINFO[0m	gatewayserver/main.go:33	Init Grpc Server conn success
+2023-08-16T15:54:10.181+0800	[34mINFO[0m	gatewayserver/main.go:31	log init success...
+2023-08-16T15:54:10.192+0800	[34mINFO[0m	utils/utils.go:48	NewSvrConn success
+2023-08-16T15:54:10.192+0800	[34mINFO[0m	gatewayserver/main.go:33	Init Grpc Server conn success
+2023-08-16T15:54:32.425+0800	[34mINFO[0m	utils/utils.go:48	NewSvrConn success
+2023-08-16T15:56:03.146+0800	[34mINFO[0m	utils/utils.go:48	NewSvrConn success
+2023-08-16T15:58:06.346+0800	[34mINFO[0m	utils/utils.go:48	NewSvrConn success
+2023-08-16T15:59:26.234+0800	[34mINFO[0m	utils/utils.go:48	NewSvrConn success
+2023-08-16T16:06:17.398+0800	[34mINFO[0m	utils/utils.go:48	NewSvrConn success
+2023-08-16T16:07:03.160+0800	[34mINFO[0m	utils/utils.go:48	NewSvrConn success
+2023-08-16T16:09:36.025+0800	[34mINFO[0m	utils/utils.go:48	NewSvrConn success
+2023-08-16T16:09:47.205+0800	[35mDEBUG[0m	response/response.go:50	cant set StatusMsg
+2023-08-16T16:09:47.205+0800	[35mDEBUG[0m	response/response.go:56	cant set StatusMsg
+2023-08-16T16:16:37.675+0800	[35mDEBUG[0m	response/response.go:50	cant set StatusMsg
+2023-08-16T16:16:53.066+0800	[35mDEBUG[0m	response/response.go:56	cant set StatusMsg
+2023-08-16T17:47:50.050+0800	[34mINFO[0m	gatewayserver/main.go:31	log init success...
+2023-08-16T17:47:50.060+0800	[34mINFO[0m	utils/utils.go:48	NewSvrConn success
+2023-08-16T17:47:50.060+0800	[34mINFO[0m	gatewayserver/main.go:33	Init Grpc Server conn success
+2023-08-16T17:47:55.508+0800	[35mDEBUG[0m	response/response.go:51	cant set StatusMsg
+2023-08-16T17:47:55.508+0800	[35mDEBUG[0m	response/response.go:57	cant set StatusMsg
