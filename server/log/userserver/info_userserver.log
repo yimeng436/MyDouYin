@@ -20,3 +20,23 @@
 2023-08-15T15:42:13.711+0800	[34mINFO[0m	userserver/main.go:67	Init Consul Register success
 2023-08-15T15:42:13.711+0800	[34mINFO[0m	userserver/main.go:69	TikTokLite.user_svr listening on 127.0.0.1:8002
 2023-08-15T15:49:24.127+0800	[34mINFO[0m	userserver/main.go:89	注销成功
+2023-08-15T17:29:19.068+0800	[34mINFO[0m	userserver/main.go:39	config loadding success
+2023-08-15T17:29:19.089+0800	[34mINFO[0m	userserver/main.go:67	Init Consul Register success
+2023-08-15T17:29:19.089+0800	[34mINFO[0m	userserver/main.go:69	TikTokLite.user_svr listening on 127.0.0.1:8002
+2023-08-15T17:40:37.286+0800	[34mINFO[0m	userserver/main.go:89	注销成功
+2023-08-15T17:41:39.728+0800	[34mINFO[0m	userserver/main.go:39	config loadding success
+2023-08-15T17:41:39.743+0800	[34mINFO[0m	userserver/main.go:67	Init Consul Register success
+2023-08-15T17:41:39.743+0800	[34mINFO[0m	userserver/main.go:69	TikTokLite.user_svr listening on 127.0.0.1:8002
+2023-08-15T21:19:52.103+0800	[34mINFO[0m	userserver/main.go:89	注销成功
+2023-08-15T21:19:55.736+0800	[34mINFO[0m	userserver/main.go:39	config loadding success
+2023-08-15T21:19:55.763+0800	[34mINFO[0m	userserver/main.go:67	Init Consul Register success
+2023-08-15T21:19:55.763+0800	[34mINFO[0m	userserver/main.go:69	TikTokLite.user_svr listening on 127.0.0.1:8002
+2023-08-15T22:14:37.399+0800	[34mINFO[0m	userserver/main.go:89	注销成功
+2023-08-15T22:22:51.570+0800	[34mINFO[0m	userserver/main.go:39	config loadding success
+2023-08-15T22:22:51.584+0800	[34mINFO[0m	userserver/main.go:67	Init Consul Register success
+2023-08-15T22:22:51.584+0800	[34mINFO[0m	userserver/main.go:69	TikTokLite.user_svr listening on 127.0.0.1:8002
+2023-08-15T22:50:55.426+0800	[34mINFO[0m	userserver/main.go:89	注销成功
+2023-08-15T22:50:57.231+0800	[34mINFO[0m	userserver/main.go:39	config loadding success
+2023-08-15T22:50:57.245+0800	[34mINFO[0m	userserver/main.go:67	Init Consul Register success
+2023-08-15T22:50:57.246+0800	[34mINFO[0m	userserver/main.go:69	TikTokLite.user_svr listening on 127.0.0.1:8002
+2023-08-15T22:55:47.464+0800	[34mINFO[0m	userserver/main.go:89	注销成功

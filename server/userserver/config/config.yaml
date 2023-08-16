@@ -1,8 +1,7 @@
 svr_config:
-  name: "userserver"
+  name: "usersvr"
   host: "127.0.0.1"
   port: "8002"
-  user_svr_name: "userserver"
 
 
 redis:

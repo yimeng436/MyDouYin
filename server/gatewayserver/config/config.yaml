@@ -1,0 +1,22 @@
+svr_config:
+  name: "gatewaysvr"
+  host: "127.0.0.1"
+  port: 8005
+  mode: "dev"
+  user_svr_name: "usersvr"
+
+  video_path: "/root/tiktok/video"
+
+log:
+  level: "debug"
+  file_name: "gatewaysvr.log"
+  log_path: "../log/gatewaysvr/"
+  max_size: 200
+  max_age: 30
+  max_backups: 7
+
+consul:
+  host: "127.0.0.1"
+  port: 8500
+  tags:
+    - "gatewaysvr"
